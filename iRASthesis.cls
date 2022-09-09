@@ -218,6 +218,7 @@
             \noindent\textcolor{hka-red}{\rule{15cm}{1mm}}
         \else
              \noindent\textcolor{hka-lightblue}{\rule{15cm}{1mm}}
+        \fi
     \fi
 }
 
