@@ -13,6 +13,7 @@ If you haven't worked with LaTeX before we recommend using the online Editor `Ov
 7. Open `main.tex` inside Overleaf and set your language, type of work document and color (faculty) in the second line
 8. Read Chapter 1 on how to use this template and have a look at [this](https://de.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes) basic tutorial 
 
+> **NOTE:** If you want to give more than one person access to your document or include literature management programs like Zotero (in contrast to uploading a bib file by hand), the free plan is unfortunately not enough. For this you need to [subscribe](https://www.overleaf.com/user/subscription/plans)(student version costs 7€/month) or install LaTeX locally on your machine.
 
 ## How to collaborate
 If you are using `Overleaf` you can invite other people to your current project where they can change and adjust your text. This might be useful for proofreaders or your supervisor. 
