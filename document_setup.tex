@@ -1,0 +1,134 @@
+%% --------------
+%% | Typography |
+%% --------------
+
+% T1 font encoding
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%% --------------
+%% | Packages   |
+%% --------------
+\usepackage[nooneline,bf]{caption} % Figure descriptions from left margin
+\usepackage{times}
+
+% numbers option provides compact numerical references in the text.
+\usepackage[numbers]{natbib}
+
+%% -------------------------------
+%% | Graphics, Figures, Tables   |
+%% -------------------------------
+\usepackage[dvips,pdftex]{graphicx}
+\usepackage{epic}
+\usepackage{eepic}
+\usepackage{epsfig}
+\usepackage{tikz}
+\usepackage{pgfplots} % necessary
+\usepackage{float} % damit Tabellen und Grafiken sich selbst ausrichten dürfen und nicht zwangshaft an einer Stelle stehen. verhindern kann man das mit [H]
+\usepackage{subcaption} % necessary
+\usepackage{transparent}
+
+\usepackage{multicol}
+\usepackage{multirow} % necessary
+\usepackage{longtable}
+\usepackage[export]{adjustbox} % necessary
+\usepackage{rotating}
+\usepackage{hhline}
+
+%% --------------
+%% | Listings    |
+%% --------------
+\usepackage{algorithm}		  % Code-Listings
+\usepackage{algpseudocode}    % algorithmicx with layout
+%\usepackage{algorithmic}	  % Code-Listings
+% see http://www.ctan.org/tex-archive/macros/latex/contrib/algorithm2e/algorithm2e.pdf
+% for more sophisticated algorithm listings
+\usepackage{listings}
+
+\definecolor{darkGray}{RGB}{135,135,134}
+\definecolor{CodeGreen}{rgb}{0,0.6,0}
+\definecolor{CodeMauve}{rgb}{0.58,0,0.82}
+\lstset{captionpos=t, numbers=left, stepnumber=1, tabsize=2, basicstyle=\ttfamily\footnotesize, breaklines=true, xleftmargin=4em, frame=leftline, rulecolor=\color{darkGray}, framexleftmargin=2em, escapechar=\%, numberstyle=\color{darkGray},commentstyle=\color{CodeGreen}, keywordstyle=\color{blue}, stringstyle=\color{CodeMauve}}
+% Make listings similar to algorithm environment
+% \DeclareCaptionFormat{mylst}{\hrule#1#2#3}
+% \captionsetup[lstlisting]{format=mylst,labelfont=bf,singlelinecheck=off,labelsep=space}
+
+%% ------------------------------------------
+%% | Glossary, Acronyms and Nomenclature    |
+%% ------------------------------------------
+\usepackage[acronym,toc]{glossaries}
+\usepackage{nomencl}
+
+\makeglossaries
+
+%% --------------
+%% | Margins    |
+%% --------------
+\usepackage{vmargin}          % Adjust margins in a simple way
+\usepackage[absolute,overlay]{textpos}
+
+%% --------------
+%% | Math       |
+%% --------------
+\usepackage{grffile}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{spverbatim}
+\usepackage{textcomp}
+\usepackage{enumerate}
+\usepackage[inline]{enumitem}
+
+%% ------------------------------
+%% | TODOs and Dummy Text       |
+%% ------------------------------
+\iflanguage{ngerman}{
+  \usepackage[colorinlistoftodos,ngerman]{todonotes} %See: https://www.ra.informatik.tu-darmstadt.de/fileadmin/user_upload/Group_RA/eiwa/todonotes.pdf
+}{
+  \usepackage[colorinlistoftodos]{todonotes} %See: https://www.ra.informatik.tu-darmstadt.de/fileadmin/user_upload/Group_RA/eiwa/todonotes.pdf
+}
+
+\usepackage{blindtext}
+
+%% ---------------------------
+%% | References in PDF       |
+%% ---------------------------
+% Hyperref should be the last package loaded
+\usepackage[hyphens]{url}
+\usepackage[breaklinks,colorlinks=true,pdftex,pageanchor=false]{hyperref}
+\Urlmuskip=0mu  plus 10mu
+%% -------------------------------
+%% |        Declarations         |
+%% -------------------------------
+\pgfplotsset{compat=newest}
+\pgfplotsset{plot coordinates/math parser=false}
+%% the following commands are needed for some matlab2tikz features
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{arrows.meta}
+\usepgfplotslibrary{patchplots}
+
+\graphicspath{{Figures/}{../jpeg/png/svg/gif/}}
+
+\setlength {\marginparwidth }{2cm}
+
+\newcommand\setpdf{
+
+  \let\theauthor\@author
+  \let\thetitle\@title
+
+  \hypersetup{
+    plainpages=false,
+    linkcolor=black,          % color of internal links (change box color with linkbordercolor)
+    citecolor=black,        % color of links to bibliography
+    filecolor=black,      % color of file links
+    urlcolor=black           % color of external links
+  }
+}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\newcommand{\comment}[1]{}
+
+%% --- End of Declarations ---
+
