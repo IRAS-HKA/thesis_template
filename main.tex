@@ -1,0 +1,96 @@
+%% set language, type and logo color of your thesis [german/english, bachelor/master/project, red/blue/lightblue]
+\documentclass[english,master,red,footheight=14.5pt]{iRASthesis}
+
+\include{my_document_info}
+
+\makeatletter
+\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
+  \@titlehead
+\begin{flushleft}
+  \vspace*{-1.5cm}
+  \Huge\changefont{phv}{m}{n}
+  \parbox{12cm}{
+  \@title
+  }
+  \\
+  \vspace*{0.5cm}
+  \large\changefont{phv}{m}{n}
+  \@subtitle  \\
+  \hkadrawline \\
+  \Huge\changefont{phv}{m}{n}
+  \thetitleotherlanguage \\
+  \vspace*{0.3cm}
+  \large\changefont{phv}{m}{n}
+  \thesubtitleotherlanguage  \\
+  \vspace*{0.5cm}
+  \Large\changefont{phv}{m}{n}
+  \@author \\
+  \vspace*{0.8cm}
+  \large\changefont{phv}{m}{n}
+  \@publishers
+\end{flushleft}\egroup
+\thispagestyle{empty}
+}
+\makeatother
+
+% \renewcommand{\chapterpagestyle}{
+% \clearscrheadfoot
+% \rehead{\pagemark}
+% \rohead{\pagemark}
+% \ofoot{}
+% }
+\clearpairofpagestyles
+% \rehead{\pagemark}
+% \rohead{\pagemark}
+% \ofoot{}
+
+\lehead{\headmark}
+\rehead*{\pagemark}
+\lohead{\headmark}
+\rohead*{\pagemark}
+\ofoot{}
+
+\begin{document}
+
+% \pagestyle{plain}
+
+\settitle
+\setpdf
+
+%% Title Page
+\includetitle
+\includepc
+
+\includeabstract
+\includeacknowledgments
+\inculdetableofcontents
+
+% \includeglossary
+\inculdelistoffigures
+\inculdelistoftables
+\includeacronyms
+\inculdelistoflistings
+% \includenomenclature
+
+
+\setmainpart
+%% please remove following line in final version
+\include{content/09-how-to-use}
+\include{content/10-introduction}
+\include{content/20-state-of-the-art}
+\include{content/30-methods}
+\include{content/40-concept}
+\include{content/50-implementation}
+\include{content/60-results}
+\include{content/70-discussion}
+\include{content/80-conclusion}
+
+\Bibliography{\mybibliographyfiles}
+
+% \addmybibentry
+\include{content/90-appendix}
+
+
+\includedeclaration
+
+\end{document}
