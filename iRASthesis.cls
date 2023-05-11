@@ -265,7 +265,7 @@
 \renewcommand{\includedeclaration}{\input{content/04-declaration}\blankpage}
 
 \newcommand{\includepc}{}
-\renewcommand{\includepc}{\input{content/05_pc}\blankpage}
+\renewcommand{\includepc}{\input{content/05-pc}\blankpage}
 
 \newcommand{\includeabstract}{}
 
