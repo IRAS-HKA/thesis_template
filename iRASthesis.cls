@@ -153,8 +153,8 @@
 
 \newcommand{\theinstitute}{
   \iflanguage{ngerman}
-   {Institut f\"ur Angewandte Forschung (IAF) \\ Robotik und Autonome Systeme (iRAS)}
-   {Institute for Applied Research (IAF) \\ Robotics and Autonomous Systems (iRAS)}
+   {Institut f\"ur Angewandte Forschung (IAF) \\ Robotik und Autonome Systeme (IRAS)}
+   {and the Institute for Robotics and Autonomous Systems (IRAS)}
   }
 \newcommand{\institute}[1]{\renewcommand{\theinstitute}{#1}}
 
@@ -206,7 +206,8 @@
 
 \usepackage{colortbl}
 \usepackage{xcolor} 
-\definecolor{hka-red}{cmyk}{0,0.35294117647,0.39215686274,0.01960784313}
+% \definecolor{hka-red}{cmyk}{0,0.35294117647,0.39215686274,0.01960784313}
+\definecolor{hka-red}{cmyk}{0,0.9,1,0.05}
 \definecolor{hka-blue}{cmyk}{0.39215686274,0.27450980392,0,0}
 \definecolor{hka-lightblue}{cmyk}{0.3725490196,0.03921568627 ,0,0}
 
@@ -325,7 +326,8 @@
 
 \newcommand{\nomenlcaturename}{\iflanguage{ngerman}{Nomenklatur}{Nomenclature}}
 \newcommand{\acronymsname}{\iflanguage{ngerman}{Abkürzungsverzeichnis}{Acronyms}}
-\renewcommand{\lstlistlistingname}{\iflanguage{ngerman}{Listingsverzeichnis}{Listings}}
+\renewcommand{\lstlistlistingname}{\iflanguage{ngerman}{Algorithmenverzeichnis}{List of Algorithms}}
+\renewcommand{\lstlistingname}{\iflanguage{ngerman}{Algorithmus}{Algorithm}}
 
 \newcommand{\includeglossary}{}
 \renewcommand{\includeglossary}{
