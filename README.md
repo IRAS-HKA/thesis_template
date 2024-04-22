@@ -1,4 +1,4 @@
-# iRAS LaTeX Template
+# IRAS LaTeX Template
 
 ## How to use
  

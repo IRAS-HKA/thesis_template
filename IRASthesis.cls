@@ -1,9 +1,9 @@
-%% iRASthesis.cls
+%% IRASthesis.cls
 %%
 %% LaTeX2e class for theses
 %%
 %% This template is derived work of KIT thesis template: https://github.com/KITrobotics/Latex_Template by Timo Rohrberg, Thorsten Haberecht and Denis Štogl
-%% Adaptation by Gergely Sóti, H-KA iRAS Prof. Hein, 2021; gergely.soti@h-ka.de
+%% Adaptation by Gergely Sóti, H-KA IRAS Prof. Hein, 2021; gergely.soti@h-ka.de
 %
 %
 % This work may be distributed and/or modified under the
@@ -21,40 +21,40 @@
 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{iRASthesis}
+\ProvidesClass{IRASthesis}
 
-\newif\ifiRASthesis@german
-\newif\ifiRASthesis@bachelor
-\newif\ifiRASthesis@master
-\newif\ifiRASthesis@project
-\newif\ifiRASthesis@blue
-\newif\ifiRASthesis@red
-\newif\ifiRASthesis@lightblue
+\newif\ifIRASthesis@german
+\newif\ifIRASthesis@bachelor
+\newif\ifIRASthesis@master
+\newif\ifIRASthesis@project
+\newif\ifIRASthesis@blue
+\newif\ifIRASthesis@red
+\newif\ifIRASthesis@lightblue
 
-\DeclareOption{german}{\iRASthesis@germantrue}
-\DeclareOption{ngerman}{\iRASthesis@germantrue}
+\DeclareOption{german}{\IRASthesis@germantrue}
+\DeclareOption{ngerman}{\IRASthesis@germantrue}
 
-\DeclareOption{bachelor}{\iRASthesis@bachelortrue}
-\DeclareOption{master}{\iRASthesis@mastertrue}
-\DeclareOption{project}{\iRASthesis@projecttrue}
-\DeclareOption{blue}{\iRASthesis@bluetrue}
-\DeclareOption{red}{\iRASthesis@redtrue}
-\DeclareOption{lightblue}{\iRASthesis@lightbluetrue}
+\DeclareOption{bachelor}{\IRASthesis@bachelortrue}
+\DeclareOption{master}{\IRASthesis@mastertrue}
+\DeclareOption{project}{\IRASthesis@projecttrue}
+\DeclareOption{blue}{\IRASthesis@bluetrue}
+\DeclareOption{red}{\IRASthesis@redtrue}
+\DeclareOption{lightblue}{\IRASthesis@lightbluetrue}
 
 \ProcessOptions\relax
 
 \newcommand{\thesistype}{}
-\ifiRASthesis@bachelor
+\ifIRASthesis@bachelor
   \renewcommand{\thesistype}{\iflanguage{ngerman}{Bachelorarbeit}{Bachelor's Thesis}}
 \fi
-\ifiRASthesis@master
+\ifIRASthesis@master
   \renewcommand{\thesistype}{\iflanguage{ngerman}{Masterarbeit}{Master's Thesis}}
 \fi
-\ifiRASthesis@project
+\ifIRASthesis@project
   \renewcommand{\thesistype}{\iflanguage{ngerman}{Projektarbeit}{Project Paper}}
 \fi
 
-\ifiRASthesis@german
+\ifIRASthesis@german
   % English is also needed in German thesis for the abstract
   \usepackage[main=ngerman,english]{babel}
 \else
@@ -98,12 +98,12 @@
 
 
 \titlehead{
-\ifiRASthesis@blue
+\ifIRASthesis@blue
     \includegraphics[scale=0.35, valign=t]{logos/HKA_W_Wortmarke_CMYK}
     \hspace*{\fill}
     \includegraphics[scale=0.35, valign=t]{logos/HKA_W_Bildmarke_CMYK}
 \else
-    \ifiRASthesis@red
+    \ifIRASthesis@red
         \includegraphics[scale=0.35, valign=t]{logos/HKA_Wortmarke-v_CMYK}
         \hspace*{\fill}
         \includegraphics[scale=0.35, valign=t]{logos/HKA_Bildmarke-v_CMYK}
@@ -139,7 +139,7 @@
 }
 
 \newcommand{\thefaculty}{
-\ifiRASthesis@project
+\ifIRASthesis@project
       \iflanguage{ngerman}
       {Fakult\"at f\"ur Maschinenbau und Mechatronik (MMT)  \\ in Zusammenarbeit mit}
       {Faculty for Mechanical Engineering and Mechatronics (MMT) \\ in cooperation with }
@@ -212,10 +212,10 @@
 \definecolor{hka-lightblue}{cmyk}{0.3725490196,0.03921568627 ,0,0}
 
 \newcommand{\hkadrawline}{
-    \ifiRASthesis@blue
+    \ifIRASthesis@blue
         \noindent\textcolor{hka-blue}{\rule{15cm}{1mm}}
     \else
-        \ifiRASthesis@red
+        \ifIRASthesis@red
             \noindent\textcolor{hka-red}{\rule{15cm}{1mm}}
         \else
              \noindent\textcolor{hka-lightblue}{\rule{15cm}{1mm}}
@@ -229,8 +229,8 @@
     \begin{flushleft}
         \large
         
-        \iflanguage{ngerman}{\ifiRASthesis@bachelor Bachelorarbeit \else \ifiRASthesis@master Masterarbeit \else Projektarbeit \fi \fi}{\ifiRASthesis@bachelor Bachelor's Thesis \else \ifiRASthesis@master Master's Thesis \else Project Paper \fi \fi}\\
-        \iflanguage{ngerman}{vorgelegt  \ifiRASthesis@bachelor zur Erlangung des Bachelorgrades \else \ifiRASthesis@master zur Erlangung des Mastergrades \else im Rahmen des Studiengangs Robotik und künstliche Intelligenz in der Produktion  \fi \fi}{in partial fulfilment of the requirements for the \ifiRASthesis@bachelor Bachelor's \else \ifiRASthesis@master Master's degree \else Robotics and Artificial Intelligence in Production Master's course \fi \fi}\\
+        \iflanguage{ngerman}{\ifIRASthesis@bachelor Bachelorarbeit \else \ifIRASthesis@master Masterarbeit \else Projektarbeit \fi \fi}{\ifIRASthesis@bachelor Bachelor's Thesis \else \ifIRASthesis@master Master's Thesis \else Project Paper \fi \fi}\\
+        \iflanguage{ngerman}{vorgelegt  \ifIRASthesis@bachelor zur Erlangung des Bachelorgrades \else \ifIRASthesis@master zur Erlangung des Mastergrades \else im Rahmen des Studiengangs Robotik und künstliche Intelligenz in der Produktion  \fi \fi}{in partial fulfilment of the requirements for the \ifIRASthesis@bachelor Bachelor's \else \ifIRASthesis@master Master's degree \else Robotics and Artificial Intelligence in Production Master's course \fi \fi}\\
         \iflanguage{ngerman}{der Hochschule Karlsruhe}{at Karlsruhe University of Applied Sciences}
         \vspace*{0.8cm}
         
@@ -376,9 +376,9 @@
   \renewcommand{\addmybibentry}{
     \newpage
     \section*{\iflanguage{ngerman}{BibTex Eintrag für dieser Arbeit}{BibTex Entry of this Thesis}}
-    \ifiRASthesis@bachelor @bachelorsthesis \else @mastersthesis \fi\{\theauthor\_\theeditend, 	\\
+    \ifIRASthesis@bachelor @bachelorsthesis \else @mastersthesis \fi\{\theauthor\_\theeditend, 	\\
 	\tab author = \{\theauthor\},		\\
-	\tab iRAS-thesis = \thesistype,		\\
+	\tab IRAS-thesis = \thesistype,		\\
 	\tab keywords = \{\thekeywords\},		\\
 	\tab location = \{Karlsruhe, Germany\},	\\
 	\tab school = \{Karlsruhe University of Applied Sciences\},	\\
