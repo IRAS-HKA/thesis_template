@@ -153,8 +153,8 @@
 
 \newcommand{\theinstitute}{
   \iflanguage{ngerman}
-   {Institut f\"ur Angewandte Forschung (IAF) \\ Robotik und Autonome Systeme (IRAS)}
-   {and the Institute for Robotics and Autonomous Systems (IRAS)}
+   {Institut f\"ur Robotik und Autonome Systeme (IRAS)}
+   {Institute for Robotics and Autonomous Systems (IRAS)}
   }
 \newcommand{\institute}[1]{\renewcommand{\theinstitute}{#1}}
 
